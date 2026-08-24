@@ -1,4 +1,4 @@
-# Delineation of Floodplains for FEMA RISK MAP Program
+# Delineation of Floodplains for FEMA Flood Risk MApping Program
 
 This repository contains three python scripts used to generate raster and vector based flood dataset from HEC-RAS hydraulic modeling results. These scripts convert cross-section-based Water Surface Elevation (WSE) information into WSE raster, depth grid raster, and final floodplain polygons. These scripts were designed specifically to meet the Federal Emergency Management Agency (FEMA) Risk Map Program technical standards for creating regulatory flood maps.
 
