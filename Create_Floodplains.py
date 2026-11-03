@@ -1,7 +1,6 @@
 # ---------------------------------------------------------------------------
 # Floodplains_scripttool.py
-# Created in June 2011 by Z. Zaloudek
-# Revised through May 28 2025 for ArcGIS Pro (Python 3.x)
+# Revised through May 28 2025 for ArcGIS Pro (Python 3.x) by Samikshya Pantha
 
 # ---------------------------------------------------------------------------
 
@@ -70,13 +69,15 @@ evtflds = {
     '_01minus': 'WSEL_100M',
 }
 
-# Create output geodatabases if needed
-
 # Create (and clean up old) output geodatabases
 outGDB = f"{Folder}\\{outGDBnm}.gdb"
-if arcpy.Exists(outGDB):
-    arcpy.Delete_management(outGDB)
-arcpy.CreateFileGDB_management(Folder, outGDBnm)
+
+if not arcpy.Exists(outGDB):
+    arcpy.CreateFileGDB_management(Folder, outGDBnm)
+    print(f"Created output geodatabase: {outGDB}")
+else:
+    print(f"Output geodatabase already exists: {outGDB}")
+    
 
 if snstvty_TF:
     saGDB = f"{Folder}\\{outGDBnm}_sensitivity.gdb"
